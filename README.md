@@ -1,70 +1,173 @@
-# Getting Started with Create React App
+# 🎴 WishCraft — Custom Greetings App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+> A personalized greeting card application built with **React JS** that lets users create and share custom greeting cards with their name and profile photo overlaid on beautiful templates.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 📸 App Preview
 
-### `npm start`
+| Login Screen | Home Feed | Card Preview | Premium Popup |
+|---|---|---|---|
+| User enters name & uploads photo | Browse free & premium templates | Live name + photo overlay | Subscription upsell flow |
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## ✨ Features
 
-### `npm test`
+- 🔐 **User Login / Guest Entry** — Enter your name and upload a profile picture to get started
+- 🖼️ **Upload Profile Picture** — Profile photo is stored and displayed on all greeting cards
+- 🎨 **Personalized Greeting Templates** — Browse categorized templates (Birthday, Anniversary, Festivals, Shayari & more)
+- 👤 **Live Name & Photo Overlay** — Your name and photo are automatically composed onto every template
+- 👑 **Premium Template Popup** — Clicking a locked template triggers a subscription upsell popup
+- 📥 **Download Greeting Cards** — Export your personalized card as a downloadable image
+- 📱 **Responsive UI Design** — Works seamlessly on mobile and desktop
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## 🛠️ Tech Stack
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+| Layer | Technology |
+|---|---|
+| Frontend Framework | React JS |
+| Routing | React Router DOM |
+| Image Export | html2canvas |
+| Styling | CSS |
+| State / Storage | localStorage |
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 📁 Folder Structure
 
-### `npm run eject`
+```
+src
+│
+├── assets/              # Images, icons, and static files
+├── components/          # Reusable React components (TemplateCard, PremiumPopup, etc.)
+├── data/                # Template data (categories, image URLs, free/premium flags)
+├── pages/               # Page-level components (Login, Home, CardPreview)
+├── styles/              # CSS stylesheets
+├── App.js               # Root component with routing
+└── index.js             # React entry point
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+---
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 🚀 Installation & Setup
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Prerequisites
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Make sure you have the following installed:
 
-## Learn More
+- [Node.js](https://nodejs.org/) (v14 or above)
+- npm (comes with Node.js)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Step 1 — Clone the Repository
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```bash
+git clone YOUR_GITHUB_REPOSITORY_LINK
+```
 
-### Code Splitting
+### Step 2 — Navigate to the Project Directory
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```bash
+cd greetings-app
+```
 
-### Analyzing the Bundle Size
+### Step 3 — Install Dependencies
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+```bash
+npm install
+```
 
-### Making a Progressive Web App
+### Step 4 — Start the Development Server
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+```bash
+npm start
+```
 
-### Advanced Configuration
+The app will run at:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+```
+http://localhost:3000
+```
 
-### Deployment
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## 📱 App Screens
 
-### `npm run build` fails to minify
+### 1. Login Screen
+- User enters their display name
+- User uploads a profile picture
+- Data is saved to `localStorage` for persistence across sessions
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### 2. Home Screen
+- Greeting templates displayed in a responsive grid layout
+- Templates are categorized (Birthday, Anniversary, Festivals, Shayari, etc.)
+- User's name and photo are automatically overlaid on each template card
+- Free templates are accessible; Premium templates show a lock badge
+
+### 3. Card Preview & Personalization
+- Full-size preview of the selected template with live overlay
+- User name and profile photo are composited onto the card
+- Download button captures the card using `html2canvas` and saves it as an image
+
+### 4. Premium Subscription Popup
+- Triggered when a user clicks a premium (locked) template
+- Displays subscription plans and feature highlights
+- Prompts the user to upgrade to unlock all templates
+
+---
+
+## ⚙️ How It Works
+
+### Image Overlay Logic
+The user's name and profile picture are stored in `localStorage` upon login. On the Home screen and Card Preview, these values are read and rendered as absolute-positioned overlay elements on top of the template image using CSS `position: relative/absolute`. This creates the appearance of a composed, personalized card without requiring any server-side processing.
+
+### Download Functionality
+When the user clicks **Download**, the `html2canvas` library captures the greeting card DOM element (template background + name + photo overlay) and converts it into a Canvas object, which is then exported as a `.png` image file.
+
+### Template Rendering
+Templates are defined in a `data/` file as an array of objects containing the image URL, category, and a `isPremium` boolean flag. The Home screen maps over this array to render cards dynamically.
+
+---
+
+## 🧱 Challenges Faced
+
+| Challenge | Solution |
+|---|---|
+| React Router setup & navigation | Configured `BrowserRouter` with nested route structure |
+| Dynamic image overlay positioning | Used CSS `position: absolute` within a `position: relative` container |
+| Handling uploaded images | Used `FileReader` API to convert uploaded file to a base64 data URL |
+| Exporting card as downloadable image | Used `html2canvas` to capture the composed card DOM node |
+
+---
+
+## 🔮 Future Improvements
+
+- [ ] 🔥 Firebase Authentication (real Google Login)
+- [ ] 💳 Payment Gateway Integration (Razorpay / Stripe)
+- [ ] 📲 WhatsApp Direct Share via Web Share API
+- [ ] ☁️ Cloud Storage for user-uploaded photos (Firebase Storage)
+- [ ] 🖼️ More Premium Templates (500+ cards)
+- [ ] 🌐 Multi-language Support (Hindi, Urdu, Tamil, etc.)
+- [ ] 📊 Admin Dashboard for template management
+
+---
+
+## 🎬 Demo
+
+| Resource | Link |
+|---|---|
+| 📹 Video Demo | [Watch Demo](ADD_YOUR_VIDEO_LINK_HERE) |
+| 💻 GitHub Repository | [View Source Code](ADD_YOUR_REPO_LINK_HERE) |
+
+---
+
+## 👩‍💻 Author
+
+**Meghana**
+B.Tech CSE Student · React JS Enthusiast · Frontend Developer
+
+---
+
+

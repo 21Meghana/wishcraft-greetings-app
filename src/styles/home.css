@@ -1,0 +1,21 @@
+body{
+  margin:0;
+  background:#0f0a1e;
+}
+
+.home-container{
+  padding:30px;
+  color:white;
+  font-family:sans-serif;
+}
+
+.home-title{
+  font-size:35px;
+  margin-bottom:30px;
+}
+
+.cards-container{
+  display:flex;
+  gap:25px;
+  flex-wrap:wrap;
+}
