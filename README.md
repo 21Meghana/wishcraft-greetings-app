@@ -1,3 +1,5 @@
+
+
 # 🎴 WishCraft — Custom Greetings App
 
 > A personalized greeting card application built with **React JS** that lets users create and share custom greeting cards with their name and profile photo overlaid on beautiful templates.
@@ -158,7 +160,7 @@ Templates are defined in a `data/` file as an array of objects containing the im
 
 | Resource | Link |
 |---|---|
-
+| 📹 Video Demo | [Watch Demo](https://github.com/user-attachments/assets/ee4b75e8-e560-4312-8596-c33268aa9ecc) |
 | 💻 GitHub Repository | [View Source Code](https://github.com/21Meghana/wishcraft-greetings-app) |
 
 ---
