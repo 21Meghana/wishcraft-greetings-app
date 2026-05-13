@@ -158,8 +158,8 @@ Templates are defined in a `data/` file as an array of objects containing the im
 
 | Resource | Link |
 |---|---|
-| 📹 Video Demo | [Watch Demo](ADD_YOUR_VIDEO_LINK_HERE) |
-| 💻 GitHub Repository | [View Source Code](ADD_YOUR_REPO_LINK_HERE) |
+
+| 💻 GitHub Repository | [View Source Code](https://github.com/21Meghana/wishcraft-greetings-app) |
 
 ---
 
